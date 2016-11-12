@@ -1,6 +1,5 @@
 sphinx
 sphinx-autobuild
 sphinxcontrib-openapi
-recommonmark
+recommonmark==0.4.0
 sphinx_rtd_theme
-
