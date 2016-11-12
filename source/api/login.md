@@ -1,14 +1,15 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Login Service
+The Login Service will authenticate a user who has a username (email address) and password.
+
+Will need to add in locking and unlocking accounts.
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - A profile is in active state with email and password
 
 ### Request
 
-A description of the Request
+The request will contain a JSON document in the body of the request - username/password.  Username/Password should be passed over HTTPS.
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
@@ -19,9 +20,9 @@ A description of the Request
 +---------------+------------------------+--------------------------------------------------------------------------------+
 | Parameter     | Allowed Values/Datatype| Description                                                                    |
 +===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
+| userid        | email address          |    email address all lowercase                                                 |
 +---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
+| password      | password               |    password in case that was originally entered by user                        |
 +---------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
@@ -30,17 +31,17 @@ A description of the Request
 ```json
 {
   "userid" : "zmagaw",
-  "status" : "patfan"
+  "password" : "thisismypassword-noreallythisismypassword"
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+After the username/password is validated the user will be given a session token.
 
 ### Response
 
-A description of the Response
+A JSON document in the body of the response and an HTTP cookie that will be used across requests to ensure user is authenticated and authorized. 
 
 #### Parameters
 
@@ -52,10 +53,10 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Content Cell  | Content Cell           |    some text      |
 +---------------+------------------------+-------------------+
-
 ```
 
-#### Sample Response
+
+#### Success Sample Response
 
 ```json
 {
@@ -63,16 +64,26 @@ A description of the Response
   "message" : "looks good bro"
 }
 ```
-##### Status Codes
 
+#### Error Sample Response
+
+```json
+{
+  "status" : "0500",
+  "message" : "Error exists"
+}
+```
+
+##### Status Codes
 ```eval_rst
-+---------------+-------------------+
-| Code          | Description       |
-+===============+===================+
-| Content Cell  | Content Cell      |
-+---------------+-------------------+
-| Content Cell  | Content Cell      |
-+---------------+-------------------+
++---------------+------------------------+
+| Code          | Description            |
++===============+========================+
+| 0000          | Success                |
++---------------+------------------------+
+| 0500          | Error                  |
++---------------+------------------------+
+```
 
 #### Implementation details
 
@@ -80,5 +91,5 @@ Include any orchestration or implementation details here.
 
 ---
 ## Notes:
-- Note 1, this is a Note
+- Will need to add in locking and unlocking accounts.
 - Note 2, this is another note
