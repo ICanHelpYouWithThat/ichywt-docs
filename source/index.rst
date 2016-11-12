@@ -13,7 +13,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   api/index.md
+   Services/API Docs<api/index.md>
 
 
 
