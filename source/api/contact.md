@@ -57,7 +57,7 @@ Status of the request is returned.
 +---------------+------------------------+------------------------------------+
 | Parameter     | Allowed Values/Datatype| Description                        |
 +===============+========================+====================================+
-| status        | number                 |    string of numbers               |
+| status        | string                 |    string of numbers               |
 +---------------+------------------------+------------------------------------+
 | message       | string                 |    a description of the status     |
 +---------------+------------------------+------------------------------------+

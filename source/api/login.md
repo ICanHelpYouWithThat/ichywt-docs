@@ -49,9 +49,9 @@ A JSON document in the body of the response and an HTTP cookie that will be used
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 ```
 

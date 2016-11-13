@@ -69,9 +69,9 @@ Status of the Invite Update
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| status        | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| message       | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 ```
 

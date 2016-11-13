@@ -41,23 +41,23 @@ Information About the Invite, Information About the Invited, Information about t
 +--------------------------+------------------------+-------------------+
 | Parameter                | Allowed Values/Datatype| Description       |
 +==========================+========================+===================+
-| status                   | Int                    |    some text      |
+| status                   | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| message                  | String                 |    some text      |
+| message                  | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Invited:ID               | String                 |    some text      |
+| Invited:ID               | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Invited:Email            | String                 |    some text      |
+| Invited:Email            | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Invite:ID                | String                 |    some text      |
+| Invite:ID                | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Invite:Status            | String                 |    some text      |
+| Invite:Status            | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Inviter:ID               | String                 |    some text      |
+| Inviter:ID               | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Inviter:Name             | String                 |    some text      |
+| Inviter:Name             | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
-| Inviter:email            | String                 |    some text      |
+| Inviter:email            | string                 |    some text      |
 +--------------------------+------------------------+-------------------+
 
 ```

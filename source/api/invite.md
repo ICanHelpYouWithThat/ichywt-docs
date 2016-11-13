@@ -53,9 +53,9 @@ A new profile will be created for new user - status will be "1 - new"
 +---------------+------------------------+-------------------------------+
 | Parameter     | Allowed Values/Datatype| Description                   |
 +===============+========================+===============================+
-| status        | 0000, 0500,            |    Error codes                |
+| status        | string                 |    Error codes                |
 +---------------+------------------------+-------------------------------+
-| message       | message                |    dscription message         |
+| message       | string                 |    dscription message         |
 +---------------+------------------------+-------------------------------+
 ```
 
