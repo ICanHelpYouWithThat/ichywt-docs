@@ -4,6 +4,7 @@
 
 This is the base git project that will contain the documentation for ICHYWT. The documentation can be found at [http://ichywt-docs.readthedocs.io/](http://ichywt-docs.readthedocs.io/).
 
+The "Read the docs" build page is here: [https://readthedocs.org/projects/ichywt-docs/](https://readthedocs.org/projects/ichywt-docs/)
 ---
 
 # Pre-requisites
