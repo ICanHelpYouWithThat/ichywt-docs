@@ -1,49 +1,55 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Profile 
+This service retrieves a profile
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - Profile ID
 
 ### Request
 
-A description of the Request
+A profile ID
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
 
 #### Parameters
 
-| Parameter     | Allowed Values/Datatype| Description       |
-| ------------- | ---------------------- |  ---------------  |
-| Content Cell  | Content Cell           |    some text      |
-| Content Cell  | Content Cell           |    some text      |
+```eval_rst
++---------------+------------------------+--------------------------------------------------------------------------------+
+| Parameter     | Allowed Values/Datatype| Description                                                                    |
++===============+========================+================================================================================+
+| ProfileID     | String                 |    some text                                                                   |
++---------------+------------------------+--------------------------------------------------------------------------------+
+```
 
 #### Sample Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+  "profileid" : "123456"
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+The details of a profile are returned
 
 ### Response
 
-A description of the Response
+The details of a profile
 
 #### Parameters
 
+```eval_rst
++---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
-| ------------- | ---------------------- |  ---------------  |
++===============+========================+===================+
 | Content Cell  | Content Cell           |    some text      |
++---------------+------------------------+-------------------+
 | Content Cell  | Content Cell           |    some text      |
++---------------+------------------------+-------------------+
 
+```
 
 #### Sample Response
 
@@ -54,10 +60,15 @@ A description of the Response
 }
 ```
 ##### Status Codes
+
+```eval_rst
++---------------+-------------------+
 | Code          | Description       |
-| ------------- | ----------------- |
++===============+===================+
 | Content Cell  | Content Cell      |
++---------------+-------------------+
 | Content Cell  | Content Cell      |
++---------------+-------------------+
 
 #### Implementation details
 

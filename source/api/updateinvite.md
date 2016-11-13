@@ -1,14 +1,15 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Update Invite
+The ablity to update invite with either accepting invite or denying - asking to not be contacted again.
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
-
+ - A validated link has been clicked by the user
+ - Successful response of view invite service
+ 
 ### Request
 
-A description of the Request
+Invite ID, Invited Profile ID and Inviter Profile ID will be used in accepting or denying invites.
+
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
@@ -19,9 +20,13 @@ A description of the Request
 +---------------+------------------------+--------------------------------------------------------------------------------+
 | Parameter     | Allowed Values/Datatype| Description                                                                    |
 +===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
+| Invite:ID     | String                 |    some text                                                                   |
 +---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
+| Invite:Accept | Yes or No              |    some text                                                                   |
++---------------+------------------------+--------------------------------------------------------------------------------+
+| Invited:ID    | String                 |    some text                                                                   |
++---------------+------------------------+--------------------------------------------------------------------------------+
+| Inviter:ID    | String                 |     some text                                                                  |
 +---------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
@@ -29,18 +34,34 @@ A description of the Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+	"Invited" :
+  	{
+  		"ID": "1234"
+  	}
+  	"Invite" :
+  	{
+  		"ID" : "1234",
+  		"Accept" : "Yes"
+  	}
+  	"Inviter" :
+  	{
+  		"ID": "1234"
+  	}
 }
 ```
 
+
 ---
+
 ## Post-Conditions
-A description of the post-conditions.
+The invite is accepted and status is set to complete
+The invite is denied
+The inviter is given more invites
+The invited has a profile that is set to new
 
 ### Response
 
-A description of the Response
+Status of the Invite Update
 
 #### Parameters
 
@@ -48,11 +69,10 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | Content Cell           |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | Content Cell           |    some text      |
 +---------------+------------------------+-------------------+
-
 ```
 
 #### Sample Response
@@ -69,14 +89,18 @@ A description of the Response
 +---------------+-------------------+
 | Code          | Description       |
 +===============+===================+
-| Content Cell  | Content Cell      |
+| 0000          | Success           |
 +---------------+-------------------+
-| Content Cell  | Content Cell      |
+| 0500          | Error Occured     |
 +---------------+-------------------+
+```
 
 #### Implementation details
 
-Include any orchestration or implementation details here.
+The invite is accepted and status is set to complete
+The invite is denied
+The inviter is given more invites
+The invited has a profile that is set to new
 
 ---
 ## Notes:

@@ -1,14 +1,13 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# View Invite
+This service retrieves an invite information.
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - the user has clicked on a link that is valid and identifies a valid invite
 
 ### Request
 
-A description of the Request
+The request will be a simple url with a querystring parameter that includes 
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
@@ -19,39 +18,47 @@ A description of the Request
 +---------------+------------------------+--------------------------------------------------------------------------------+
 | Parameter     | Allowed Values/Datatype| Description                                                                    |
 +===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
+| InviteID      | Encoded UniqueID       |    some text                                                                   |
 +---------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
 #### Sample Request
+URL with querystring parameter of InviteID
 
-```json
-{
-  "userid" : "zmagaw",
-  "status" : "patfan"
-}
-```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+The user is able to accept or decline the invite (see update invite).
 
 ### Response
 
-A description of the Response
+Information About the Invite, Information About the Invited, Information about the Inviter
+
 
 #### Parameters
 
 ```eval_rst
-+---------------+------------------------+-------------------+
-| Parameter     | Allowed Values/Datatype| Description       |
-+===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
-+---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
-+---------------+------------------------+-------------------+
++--------------------------+------------------------+-------------------+
+| Parameter                | Allowed Values/Datatype| Description       |
++==========================+========================+===================+
+| status                   | Int                    |    some text      |
++--------------------------+------------------------+-------------------+
+| message                  | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Invited:ID               | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Invited:Email            | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Invite:ID                | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Invite:Status            | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Inviter:ID               | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Inviter:Name             | String                 |    some text      |
++--------------------------+------------------------+-------------------+
+| Inviter:email            | String                 |    some text      |
++--------------------------+------------------------+-------------------+
 
 ```
 
@@ -60,7 +67,26 @@ A description of the Response
 ```json
 {
   "status" : "0000",
-  "message" : "looks good bro"
+  "message" : "looks good bro".
+  { 
+  			"Invited" :
+  			{
+  				"ID": "1234",
+  				"email": "bob@bob.com"
+  			}
+  			"Invite" :
+  			{
+  				"ID" : "1234",
+  				"Status" : "1"
+  			}
+  			"Inviter" :
+  			{
+  				"ID": "1234",
+  				"Name" : "Bob",
+  				"email": "bob2@bob.com"
+  			}
+  		}
+  }
 }
 ```
 ##### Status Codes
@@ -69,10 +95,13 @@ A description of the Response
 +---------------+-------------------+
 | Code          | Description       |
 +===============+===================+
-| Content Cell  | Content Cell      |
+| 0000          | Success           |
 +---------------+-------------------+
-| Content Cell  | Content Cell      |
+| 0404          | Error Not Found   |
 +---------------+-------------------+
+| 0500          | Error Occured     |
++---------------+-------------------+
+```
 
 #### Implementation details
 

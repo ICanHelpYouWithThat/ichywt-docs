@@ -1,17 +1,19 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Contact Service
+This service looks up data from invite table and sends a templated message to an email address or sms
+This service should not be exposed externally
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - An invite has been added to the invite table and has an email address in it
+ - A shadow profile will have been created for user
 
 ### Request
 
-A description of the Request
+A json document as a request which has the values to fill-in a template ... the template info is also passed in.
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
+ - This should not be able to be called externally - may be orchestrated within the "invite" service.
 
 #### Parameters
 
@@ -19,9 +21,13 @@ A description of the Request
 +---------------+------------------------+--------------------------------------------------------------------------------+
 | Parameter     | Allowed Values/Datatype| Description                                                                    |
 +===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
+| InviteID      | 11234                  |     INVITE_ID from INVITE table                                                |
 +---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
+| TemplateID    | EmailInvite            |     Identifier to pull template information from                               |
++---------------+------------------------+--------------------------------------------------------------------------------+
+| EmailAddress  | bob@bob.com            |     Email address to send the invite  to                                       |
++---------------+------------------------+--------------------------------------------------------------------------------+
+| Unique Code   | ABCD1234DEFG1234ABCD   |     Unique Code                                                                |
 +---------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
@@ -29,29 +35,32 @@ A description of the Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+  "InviteID" : "1234",
+  "TemplateID" : "EmailInvite",
+  "EmailAddress" : "bob@bob.com",
+  "EmailAddress" : "ABCD1234DEFG1234ABCD" 
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+A message is sent out to the email address
+The Invite status is updated in the INVITE table
 
 ### Response
 
-A description of the Response
+Status of the request is returned.
 
 #### Parameters
 
 ```eval_rst
-+---------------+------------------------+-------------------+
-| Parameter     | Allowed Values/Datatype| Description       |
-+===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
-+---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
-+---------------+------------------------+-------------------+
++---------------+------------------------+------------------------------------+
+| Parameter     | Allowed Values/Datatype| Description                        |
++===============+========================+====================================+
+| status        | number                 |    string of numbers               |
++---------------+------------------------+------------------------------------+
+| message       | string                 |    a description of the status     |
++---------------+------------------------+------------------------------------+
 
 ```
 
@@ -66,13 +75,14 @@ A description of the Response
 ##### Status Codes
 
 ```eval_rst
-+---------------+-------------------+
-| Code          | Description       |
-+===============+===================+
-| Content Cell  | Content Cell      |
-+---------------+-------------------+
-| Content Cell  | Content Cell      |
-+---------------+-------------------+
++---------------+----------------------------------------------+
+| Code          | Description                                  |
++===============+==============================================+
+| 0000          | Content Cell                                 |
++---------------+----------------------------------------------+
+| 0500          | Unknown Error occured during processing      |
++---------------+----------------------------------------------+
+```
 
 #### Implementation details
 
