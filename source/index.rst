@@ -12,7 +12,8 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-
+   :titlesonly:
+   
    Services/API Docs<api/index.md>
 
 
