@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/ichywt-docs/badge/?version=latest)](http://ichywt-docs.readthedocs.io/en/latest/?badge=latest)
+
 # ICanHelpYouWithThat Documentation
 
 This is the base git project that will contain the documentation for ICHYWT. The documentation can be found at [http://ichywt-docs.readthedocs.io/](http://ichywt-docs.readthedocs.io/).
