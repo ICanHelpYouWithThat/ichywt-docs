@@ -14,6 +14,7 @@ Contents:
    :maxdepth: 2
    :titlesonly:
    
+   User Interface Docs<ui/index.md>
    Services/API Docs<api/index.md>
 
 

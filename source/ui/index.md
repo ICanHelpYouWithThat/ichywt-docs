@@ -1,4 +1,4 @@
-# ICHYWT API documentation
+# ICHYWT UI documentation
 
 ## Contents
  - [Login](./login.md)
@@ -9,7 +9,8 @@
 
  - [Contact](./contact.md)
 
- - [Profile](./profile.md)
+ - [Welcome](./welcome.md)
+ - [View Profile](./profile.md)
  - [Update Profile](./updateprofile.md)
  - [Profile - Activity](./profile_activity.md)
  - [Profile Org - Activity](./profile-org-activity.md)
@@ -20,9 +21,11 @@
  - [Skill Add](./skill_add.md)
  - [Skill Update](./skill_update.md)
  
- - [Find Activities](./activities.md)
+ - [Activity Find](./activities.md)
  - [Activity](./activity.md)
  - [Activity Add](./activity_add.md)
  - [Activity Update](./activity_update.md)
  - [Activity - Skill](./activity-skills.md)
+ 
+ - [Admin](./admin.md)
  
