@@ -1,5 +1,5 @@
-sphinx
-sphinx-autobuild
-sphinxcontrib-openapi
+sphinx=1.4.8
+sphinx-autobuild=0.6.0
+sphinxcontrib-openapi=0.1.0
 recommonmark==0.4.0
-sphinx_rtd_theme
+sphinx_rtd_theme=0.1.9
