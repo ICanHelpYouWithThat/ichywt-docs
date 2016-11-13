@@ -1,13 +1,6 @@
 # ICHYWT API documentation
 
-
-
-``` eval_rst
-.. openapi:: ./ichywt-api.json
-
-```
-
-# Contents
+## Contents
  - [Login](./login.md)
  - [Invite](./invite.md)
  - [Contact](./contact.md)
