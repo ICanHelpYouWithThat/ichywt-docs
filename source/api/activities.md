@@ -13,7 +13,6 @@ Get a list of Activities
  - Logged in user who has been authenticated and has a valid session token.
 
 ### Request
-
 Passing in different filtering criteria depending on what the user is trying to accomplish
 Find Activities by location, date, skill, recently updated, profile relationship, status of the activity
 
@@ -89,9 +88,9 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 
 ```

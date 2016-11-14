@@ -11,12 +11,10 @@
 
  - [Profile](./profile.md)
  - [Update Profile](./updateprofile.md)
- - [Profile - Activity](./profile_activity.md)
- - [Profile Org - Activity](./profile-org-activity.md)
- - [Profile - Skills](./profile-skills.md)
+ - [Find Profiles](./profiles-find.md)
  
- - [Skill Find](./skills.md)
- - [Skill](./skill.md)
+ 
+ - [Find Skills](./skills.md)
  - [Skill Add](./skill_add.md)
  - [Skill Update](./skill_update.md)
  
