@@ -11,7 +11,7 @@
 
  - [Profile](./profile.md)
  - [Update Profile](./updateprofile.md)
- - [Find Profiles](./profiles-find.md)
+ - [Find Profiles](./find_profiles.md)
  
  
  - [Find Skills](./skills.md)
