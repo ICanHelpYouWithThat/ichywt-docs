@@ -12,8 +12,8 @@
  - [Profile](./profile.md)
  - [Update Profile](./updateprofile.md)
  - [Find Profiles](./find_profiles.md)
- - [Profile - Add Skill](./profile_addskill.md)
- - [Profile - Add Activity](./profile_addactivity.md)
+ - [Profile - Add Skill](./profile-addskill.md)
+ - [Profile - Add Activity](./profile-addactivity.md)
  
  - [Find Skills](./skills.md)
  - [Skill Add](./skill_add.md)
