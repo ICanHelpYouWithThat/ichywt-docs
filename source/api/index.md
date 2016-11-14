@@ -12,15 +12,16 @@
  - [Profile](./profile.md)
  - [Update Profile](./updateprofile.md)
  - [Find Profiles](./find_profiles.md)
- 
+ - [Profile - Add Skill](./profile_addskill.md)
+ - [Profile - Add Activity](./profile_addactivity.md)
  
  - [Find Skills](./skills.md)
  - [Skill Add](./skill_add.md)
  - [Skill Update](./skill_update.md)
  
  - [Find Activities](./activities.md)
- - [Activity](./activity.md)
  - [Activity Add](./activity_add.md)
  - [Activity Update](./activity_update.md)
- - [Activity - Skill](./activity-skills.md)
+ - [Activity - Add Skill](./activity-addskill.md)
+ - [Activity - Add Profile](./activity_addprofile.md)
  

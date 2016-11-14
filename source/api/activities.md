@@ -8,6 +8,7 @@ Get a list of Activities
 - Match by Organization Profile ID
 - Match by Individual Profile ID
 - Match by Status of Activity
+- Match by Activity ID
 ---
 ## Preconditions
  - Logged in user who has been authenticated and has a valid session token.
@@ -28,6 +29,8 @@ Find Activities by location, date, skill, recently updated, profile relationship
 | start                | number                 |    the index to start with - optional - default is 0                           |
 +----------------------+------------------------+--------------------------------------------------------------------------------+
 | limit                | number                 |    the count of how many activities to return - optional - default is 20       |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| activity_id          | string                 |    see what activities are related to this profile owns                        |
 +----------------------+------------------------+--------------------------------------------------------------------------------+
 | host_profile_id      | string                 |    see what activities are related to this profile owns                        |
 +----------------------+------------------------+--------------------------------------------------------------------------------+
@@ -57,6 +60,7 @@ Find Activities by location, date, skill, recently updated, profile relationship
 {
   "start" : 0,
   "limit" : 20,
+  "activity_id" : "12345",
   "host_profile_id" : "12345",
   "attendee_profile_id" : "12345",
   "geolocation" : "37.4211274197085,-122.0855988802915",
