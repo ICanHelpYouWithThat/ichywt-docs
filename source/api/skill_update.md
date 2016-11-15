@@ -1,10 +1,10 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Service Profile Update Skill
+This service will add skill to a profile
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - User is logged in
+
 
 ### Request
 
@@ -16,31 +16,37 @@ A description of the Request
 #### Parameters
 
 ```eval_rst
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Parameter     | Allowed Values/Datatype| Description                                                                    |
-+===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
-+---------------+------------------------+--------------------------------------------------------------------------------+
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| Parameter            | Allowed Values/Datatype| Description                                                                    |
++======================+========================+================================================================================+
+| skill:id             | string                 |    skill id - (required)                                                       |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| skill:name           | string                 |    skill name                                                                  |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| skill:description    | string                 |    skill description                                                           |
++----------------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
 #### Sample Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+  "skill" : 
+  	{	
+  		"id": 2,
+  		"name" : "Power of Boom",
+		"description" : "drops lyrics like Nicki Minaj"  	
+  	}
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+Skill updated
 
 ### Response
 
-A description of the Response
+A simple response telling us if skill was updated not
 
 #### Parameters
 
@@ -48,9 +54,9 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 
 ```
@@ -69,9 +75,9 @@ A description of the Response
 +---------------+-------------------+
 | Code          | Description       |
 +===============+===================+
-| Content Cell  | Content Cell      |
+| 0000          | Success           |
 +---------------+-------------------+
-| Content Cell  | Content Cell      |
+| 0500          | Error Occured     |
 +---------------+-------------------+
 ```
 
@@ -81,5 +87,4 @@ Include any orchestration or implementation details here.
 
 ---
 ## Notes:
-- Note 1, this is a Note
-- Note 2, this is another note
+- Note 1

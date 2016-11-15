@@ -1,14 +1,15 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Service Add Activity
+This service will add activities to the database
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - User is logged in
+ - User represents an organization that is active state
 
 ### Request
 
-A description of the Request
+An organization would like to add in an activity
+
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
@@ -16,31 +17,60 @@ A description of the Request
 #### Parameters
 
 ```eval_rst
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Parameter     | Allowed Values/Datatype| Description                                                                    |
-+===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
-+---------------+------------------------+--------------------------------------------------------------------------------+
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| Parameter            | Allowed Values/Datatype| Description                                                                    |
++======================+========================+================================================================================+
+| host_profile_id      | string                 |    add activity related to this profile                                        |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| name                 | string                 |    name of activity                                                            |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| mission              | string                 |    description of what this activity is trying to accomplish                   |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| geolocation          | string                 |    geo-location - lat,long                                                     |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| zipcode              | string                 |    used to find activities close by - loc of Post Office or center of  zipcode |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| date_start           | number                 |    number of days since epoch to start searching for matching activities       |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| date_end             | number                 |    number of days since epoch to end searching for matching activities         |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| skill_set:skill:id   | string                 |    skill id - optional (skill name or id required)                             |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| skill_set:skill:name | string                 |    skill name  - optional may need to add new skill (skill name or id required)|
++----------------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
 #### Sample Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+  "host_profile_id" : "12345",
+  "name" : "
+  "geolocation" : "37.4211274197085,-122.0855988802915",
+  "zipcode" : "12345",
+  "date_start" : 152,
+  "date_end" : 185,
+  "skill_set" :
+  {
+  	"skill" : 
+  	{
+  		"name" : "Power of Boom"
+  	}
+  	"skill" :
+  	{
+  		"id": 2
+  	}
+  }		
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+An activity is added and will be searchable
 
 ### Response
 
-A description of the Response
+A simple response telling us if activity was added or not
 
 #### Parameters
 
@@ -48,9 +78,9 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 
 ```
@@ -69,9 +99,9 @@ A description of the Response
 +---------------+-------------------+
 | Code          | Description       |
 +===============+===================+
-| Content Cell  | Content Cell      |
+| 0000          | Success           |
 +---------------+-------------------+
-| Content Cell  | Content Cell      |
+| 0500          | Error Occured     |
 +---------------+-------------------+
 ```
 
@@ -81,5 +111,5 @@ Include any orchestration or implementation details here.
 
 ---
 ## Notes:
-- Note 1, this is a Note
-- Note 2, this is another note
+- When adding in activities - need to understand where the activity is in relationship to map ... so when searching for activities we can make efficient lookup by region
+- Skills may be added by name and need to orchestrate lookup or create new skill

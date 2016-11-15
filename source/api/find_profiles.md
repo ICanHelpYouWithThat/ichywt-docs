@@ -125,5 +125,5 @@ Include any orchestration or implementation details here.
 
 ---
 ## Notes:
-- Note 1, this is a Note
+- When adding in profiles - need to understand where the profile is in relationship to map ... so when searching for profiles we can make efficient lookup by region
 - Note 2, this is another note

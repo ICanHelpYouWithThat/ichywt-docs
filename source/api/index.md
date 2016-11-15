@@ -13,7 +13,6 @@
  - [Update Profile](./updateprofile.md)
  - [Find Profiles](./find_profiles.md)
  - [Profile - Add Skill](./profile-addskill.md)
- - [Profile - Add Activity](./profile-addactivity.md)
  
  - [Find Skills](./skills.md)
  - [Skill Add](./skill_add.md)
@@ -22,6 +21,5 @@
  - [Find Activities](./activities.md)
  - [Activity Add](./activity_add.md)
  - [Activity Update](./activity_update.md)
- - [Activity - Add Skill](./activity-addskill.md)
  - [Activity - Add Profile](./activity_addprofile.md)
  

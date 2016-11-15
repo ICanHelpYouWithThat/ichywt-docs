@@ -1,10 +1,10 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Service Profile Add Skill
+This service will add skill to a profile
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - User is logged in
+
 
 ### Request
 
@@ -16,31 +16,46 @@ A description of the Request
 #### Parameters
 
 ```eval_rst
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Parameter     | Allowed Values/Datatype| Description                                                                    |
-+===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
-+---------------+------------------------+--------------------------------------------------------------------------------+
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| Parameter            | Allowed Values/Datatype| Description                                                                    |
++======================+========================+================================================================================+
+| profile:id           | string                 |    add activity related to this profile                                        |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| skill_set:skill:id   | string                 |    skill id - optional (skill name or id required)                             |
++----------------------+------------------------+--------------------------------------------------------------------------------+
+| skill_set:skill:name | string                 |    skill name  - optional may need to add new skill (skill name or id required)|
++----------------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
 #### Sample Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+  "profile" : 
+  {
+  	"id" : 1234
+  }
+  "skill_set" :
+  {
+  	"skill" : 
+  	{
+  		"name" : "Power of Boom"
+  	}
+  	"skill" :
+  	{
+  		"id": 2
+  	}
+  }		
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+Skill added to a user profile - possibly new skill added to skill list
 
 ### Response
 
-A description of the Response
+A simple response telling us if skill was added or not
 
 #### Parameters
 
@@ -48,9 +63,9 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 
 ```
@@ -69,9 +84,9 @@ A description of the Response
 +---------------+-------------------+
 | Code          | Description       |
 +===============+===================+
-| Content Cell  | Content Cell      |
+| 0000          | Success           |
 +---------------+-------------------+
-| Content Cell  | Content Cell      |
+| 0500          | Error Occured     |
 +---------------+-------------------+
 ```
 
@@ -81,5 +96,4 @@ Include any orchestration or implementation details here.
 
 ---
 ## Notes:
-- Note 1, this is a Note
-- Note 2, this is another note
+- Skills may be added by name and need to orchestrate lookup or create new skill

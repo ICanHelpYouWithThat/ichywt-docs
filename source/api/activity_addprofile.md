@@ -1,14 +1,15 @@
-# Service API Name
-This is a description of the service. Any customization can be done here.
+# Service API Activity Add Profile
+This service will record a request from an individual to work on an activity
 
 ---
 ## Preconditions
- - Bulleted list
- - Bulleted list
+ - User is logged in
+ - User has skill requested or could have skill requested
+ - There is an open activity
 
 ### Request
 
-A description of the Request
+User requests that they are considered for an activity.
 
 #### Authentication / Authorization
  - Notes on Authentication / Authorization
@@ -16,31 +17,43 @@ A description of the Request
 #### Parameters
 
 ```eval_rst
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Parameter     | Allowed Values/Datatype| Description                                                                    |
-+===============+========================+================================================================================+
-| Content Cell  | Content Cell           |    some text                                                                   |
-+---------------+------------------------+--------------------------------------------------------------------------------+
-| Content Cell  | Content Cell           |     some text                                                                  |
-+---------------+------------------------+--------------------------------------------------------------------------------+
++---------------------+------------------------+--------------------------------------------------------------------------------+
+| Parameter           | Allowed Values/Datatype| Description                                                                    |
++=====================+========================+================================================================================+
+| profile:id          | string                 |    some text                                                                   |
++---------------------+------------------------+--------------------------------------------------------------------------------+
+| activity:id         | string                 |     some text                                                                  |
++---------------------+------------------------+--------------------------------------------------------------------------------+
+| activity:skill:id   | string                 |     some text                                                                  |
++---------------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
 #### Sample Request
 
 ```json
 {
-  "userid" : "zmagaw",
-  "status" : "patfan"
+  "profile" :
+  {
+  	"id" : 1234
+  }
+  "activity" : 
+  {
+  	"id" : 1234, 
+	"skill" : 
+	{
+		"id" : 1234
+	}
+  }
 }
 ```
 
 ---
 ## Post-Conditions
-A description of the post-conditions.
+User is able to know if their request was added
 
 ### Response
 
-A description of the Response
+A simple response telling user if the users profile was added to activity skill relationship was added
 
 #### Parameters
 
@@ -48,9 +61,9 @@ A description of the Response
 +---------------+------------------------+-------------------+
 | Parameter     | Allowed Values/Datatype| Description       |
 +===============+========================+===================+
-| Content Cell  | Content Cell           |    some text      |
+| status        | string                 |    some text      |
 +---------------+------------------------+-------------------+
-| Content Cell  | Content Cell           |    some text      |
+| message       | string                 |    some text      |
 +---------------+------------------------+-------------------+
 
 ```
@@ -69,9 +82,9 @@ A description of the Response
 +---------------+-------------------+
 | Code          | Description       |
 +===============+===================+
-| Content Cell  | Content Cell      |
+| 0000          | Success           |
 +---------------+-------------------+
-| Content Cell  | Content Cell      |
+| 0500          | Error Occured     |
 +---------------+-------------------+
 ```
 
