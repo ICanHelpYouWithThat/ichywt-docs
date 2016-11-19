@@ -4,7 +4,6 @@ This service will record a request from an individual to work on an activity
 ---
 ## Preconditions
  - User is logged in
- - User has skill requested or could have skill requested
  - There is an open activity
 
 ### Request
@@ -24,8 +23,6 @@ User requests that they are considered for an activity.
 +---------------------+------------------------+--------------------------------------------------------------------------------+
 | activity:id         | string                 |     some text                                                                  |
 +---------------------+------------------------+--------------------------------------------------------------------------------+
-| activity:skill:id   | string                 |     some text                                                                  |
-+---------------------+------------------------+--------------------------------------------------------------------------------+
 ```
 
 #### Sample Request
@@ -38,11 +35,7 @@ User requests that they are considered for an activity.
   }
   "activity" : 
   {
-  	"id" : 1234, 
-	"skill" : 
-	{
-		"id" : 1234
-	}
+  	"id" : 1234
   }
 }
 ```
