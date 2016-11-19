@@ -5,9 +5,9 @@ This screen allows a registered user to login
  - If user is not registered they are able to request an invite
 
 ---
-# References
+## References
  -  [Login API](../api/login.md)
 
 ---
-# Flow
+## Flow
 ![Login UI to Login API](./pngs/loginUI_loginAPI.png "Login UI to Login API")
